@@ -15,7 +15,7 @@ const GptSearchBar = () => {
     );
 
     const res = await movieResults.json();
-    console.log(res?.results);
+
     dispatch(
       movieInfo({
         movieName: searchText.current.value,

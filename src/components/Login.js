@@ -20,8 +20,6 @@ const Login = () => {
   const name = useRef(null);
 
   const handleClick = () => {
-    console.log(email.current.value);
-    console.log(password.current.value);
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
     if (message) return;
@@ -69,7 +67,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
