@@ -9,7 +9,7 @@ import {
   SUPPORTED_LANGUAGES,
   User_Avatar,
 } from "../utils/constants";
-import { toogleGptSearchView } from "../utils/gptSlice";
+import { movieInfo, toogleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
@@ -18,6 +18,7 @@ const Header = () => {
   const user = useSelector((store) => store.user);
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   const handleGptClick = () => {
+    dispatch(movieInfo({ movieName: null, movieResult: null }));
     dispatch(toogleGptSearchView());
   };
   const handleSignOut = () => {
