@@ -34,15 +34,15 @@ const GptSearchBar = () => {
     // console.log(gptResults.choices);
   };
   return (
-    <div className="pt-[10%] flex justify-center">
+    <div className="md:pt-[10%] pt-[30%] flex justify-center ">
       <form
-        className="w-1/2 bg-black flex"
+        className="w-full md:w-1/2 bg-opacity-70 bg-black flex"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
           ref={searchText}
           type="text"
-          className="p-4 m-4  w-2/3"
+          className="px-6 my-4  md:p-4  md:m-4  w-2/3 "
           placeholder={lang[langKey].gptSearchPlaceholder}
         />
         <button

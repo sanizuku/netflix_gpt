@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import MovieCard from "./MovieCard";
-import useMovieTrailer from "../hooks/useMovieTrailer";
 
-const MovieList = ({ title, movies }) => {
+const MovieList = ({ title, movies, name }) => {
   if (!movies) return;
 
   return (
-    <div className="p-6">
+    <div className="p-6 md:h-auto relative">
       <h1 className="text-xl text-white mb-2">{title}</h1>
-      <div className="flex overflow-x-scroll">
-        <div className="flex  ">
+      <div className=" flex overflow-x-scroll ">
+        <div className="flex flex-row ">
           {movies.map((movie) => (
             <MovieCard
               key={movie.id}
+              title={name}
               movieid={movie.id}
               posterPath={movie.poster_path}
             />

@@ -52,13 +52,17 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="flex absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 justify-between">
-      <img className="w-44" src={netflix_Logo} alt="logonfx" />
+    <div className="flex fixed w-screen px-8 bg-gradient-to-b from-black z-10 justify-between flex-row bg-stone-950 bg-opacity-50">
+      <img
+        className="w-24 h-12 md:h-12 md:w-28 md:m-0 md:mt-4"
+        src={netflix_Logo}
+        alt="logonfx"
+      />
       {user && (
         <div className="flex p-2">
           {showGptSearch && (
             <select
-              className="p-2 m-2 bg-gray-900 text-white"
+              className="rounded-lg text-xs w-20 h-8 md:w-36 md:h-12 pl-4 md:pl-4 md:my-2 md:text-base  bg-gray-900 text-white"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
@@ -70,13 +74,17 @@ const Header = () => {
           )}
           <button
             onClick={handleGptClick}
-            className="px-4 py-2 mx-4 my-2  bg-purple-800 text-white rounded-lg"
+            className="ml-2 text-xs w-20 h-8 md:w-28 md:h-12   md:my-2 md:text-base bg-red-700 text-white rounded-lg cursor-pointer"
           >
             {showGptSearch ? "HomePage" : "GPT Search"}
           </button>
-          <img className="w-12 h-12" src={User_Avatar} alt="userIcon" />
+          <img
+            className="md:w-12 md:h-10 md:ml-3 md:mt-2  w-8 h-7  ml-2"
+            src={User_Avatar}
+            alt="userIcon"
+          />
           <button
-            className="p-1 mb-4 font-bold text-white"
+            className=" md:-mt-1 font-bold text-xs md:text-base text-white"
             onClick={handleSignOut}
           >
             (Sign Out)
