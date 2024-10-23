@@ -47,6 +47,7 @@ const Header = () => {
       }
     });
     return () => unSubscribe();
+    // eslint-disable-next-line
   }, []);
   const handleLanguageChange = (e) => {
     dispatch(changeLanguage(e.target.value));
